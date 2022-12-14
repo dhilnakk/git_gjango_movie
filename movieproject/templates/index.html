@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<h3>Index Page</h3>
+
+
+
+<div class="container">
+    <div class="row">
+        {% for i in key %}
+        <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+
+  <img class="card-img-top" src="{{i.img.url}}" alt="Card image cap" width="200" height="200">
+  <div class="card-body">
+    <h5 class="card-title">{{i.name}}</h5>
+    <p class="card-text">{{i.desc}}</p>
+      <p class="card-text">{{i.year}}</p>
+  </div>
+  <div class="card-body">
+    <a href="{% url 'movieapp:details' i.id %}" class="card-link">Details</a>
+  </div>
+</div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}

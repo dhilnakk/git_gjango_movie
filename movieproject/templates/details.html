@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{{key.img.url}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{key.name}}</h5>
+    <p class="card-text">{{key.desc}}</p>
+      <p class="card-text">{{key.year}}</p>
+  </div>
+  <div class="card-body">
+    <a href="{% url 'movieapp:update' key.id %}" class="card-link">Edit</a>
+    <a href="{% url 'movieapp:delete' key.id %}" class="card-link">Delete</a>
+  </div>
+</div>
+    </div>
+</div>
+
+{% endblock %}
